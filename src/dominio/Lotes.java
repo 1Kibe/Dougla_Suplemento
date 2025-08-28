@@ -4,7 +4,8 @@ import java.time.LocalDate;
 
 public class Lotes {
     private Integer numeracao;
-    private LocalDate dataFabricacao;
+    private Integer pesoTotal;
+    private LocalDate dataFabricacao;//YYYY-MM-DD
     private LocalDate dataValidade;
     private Boolean status;
 
@@ -33,17 +34,28 @@ public class Lotes {
     public void setStatus(Boolean status) {
         this.status = status;
     }
-
+    public Integer getPesoTotal() {
+        return pesoTotal;
+    }
+    public void setPesoTotal(Integer pesoTotal) {
+        this.pesoTotal = pesoTotal;
+    }
+    
     //CONSCRUCTOR
-    public Lotes(Integer numeracao, Boolean status) {
+    public Lotes(Integer numeracao, Integer pesoTotal, LocalDate dataFabricacao, LocalDate dataValidade,
+            Boolean status) {
         this.numeracao = numeracao;
+        this.pesoTotal = pesoTotal;
+        this.dataFabricacao = dataFabricacao;
+        this.dataValidade = dataValidade;
         this.status = status;
-    };
+    }
 
     //EXIBICAO NO CONSOLE
     public void printStatus() {
         System.out.println(
             "\n NUMERAÇÂO: " + numeracao +
+            "\n PESO TOTAL: " + pesoTotal + "Kg" +
             "\n DATA DE FABRICAÇÂO: " + dataFabricacao +
             "\n DATA DE VALIDADE: " + dataValidade +
             "\n STATUS: " + status
